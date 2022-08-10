@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +62,9 @@ body{
     .menu-btn{
         display: block;
         z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
     }
     .navbar .menu{
         background-color: #141b29;

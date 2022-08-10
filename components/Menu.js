@@ -13,7 +13,7 @@ const Menu = () => (
                     <li> <a href='/contato' className='menu-btn'> Contato </a> </li>
                 </ul>
                 <div className='menu-btn'>
-                    Menu
+                    <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </nav>
