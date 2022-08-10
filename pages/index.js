@@ -10,6 +10,7 @@ function Home () {
             <meta name='description' content="Site sobre ... " />
             <meta name='author' content='Cesar - Celke' />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' />
             <title>Home</title>
         </Head>
         <Menu />
