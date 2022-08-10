@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Menu from '../components/Menu';
 
-function Home () {
+function Home ( { data } ) {
     return (
     <div>
+        { console.log(data)}
         <Head>
             <meta charSet='utf-8' />
             <meta name='robots' content='index, follow' />
@@ -21,21 +22,22 @@ function Home () {
                 <div className='top-content'>
                     <div className='text-1'>
 
-                        Temos a solução
+                        {data.datahome.text_1}
 
                     </div>
                     <div className='text-2'>
 
-                        que a sua empresa precisa.
+                        {data.datahome.text_2}
 
                     </div>
                     <div className='text-3'>
 
-                        Podemos ajudar a sua empresa!
+                        {data.datahome.text_3}
+
 
                     </div>
 
-                    <a href='/contato'>Entrar em Contato</a>
+                    <a href={data.datahome.btn_link}>{data.datahome.btn_title}</a>
 
                 </div>
             </div>
@@ -48,6 +50,15 @@ function Home () {
 
     </div>
     )
+
+}
+
+export async function getServerSideProps(){
+   const response = await fetch(`http://localhost:8080/`);
+   const data = await response.json();
+
+   return { props: {data}} ;
+   //console.log(data)
 
 }
 
