@@ -12,7 +12,7 @@ const Menu = () => (
                     <li> <a href='/sobre' className='menu-btn'> Sobre </a> </li>
                     <li> <a href='/contato' className='menu-btn'> Contato </a> </li>
                 </ul>
-                <div>
+                <div className='menu-btn'>
                     Menu
                 </div>
             </div>
