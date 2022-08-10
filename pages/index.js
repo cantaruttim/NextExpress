@@ -14,7 +14,34 @@ function Home () {
             <title>Home</title>
         </Head>
         <Menu />
-        Welcome to Mathew's page
+
+        <section className='top'>
+
+            <div className='max-width'>
+                <div className='top-content'>
+                    <div className='text-1'>
+
+                        Temos a solução
+
+                    </div>
+                    <div className='text-2'>
+
+                        que a sua empresa precisa.
+
+                    </div>
+                    <div className='text-3'>
+
+                        Podemos ajudar a sua empresa!
+
+                    </div>
+
+                    <a href='/contato'>Entrar em Contato</a>
+
+                </div>
+            </div>
+
+
+        </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src='custom.js'></script>
