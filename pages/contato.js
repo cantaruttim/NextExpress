@@ -1,7 +1,33 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Menu from '../components/Menu';
 
-function Home () {
+function Contato () {
+
+    const  [dataForm, setDataForm] = useState({
+        name: '', 
+        email: '',
+        subject: '',
+        content: ''
+    });
+
+    const onChangeInput = e => setDataForm( {...dataForm, [e.target.name]: e.target.value});
+
+    const sendContato = async e => {
+        e.preventDefault();
+        console.log(dataForm.name);
+        
+        try{
+            await fetch('http://localhost:8080/add-msg-contact', {
+                method: 'POST',
+                body: JSON.stringify(dataForm),
+                headers: { 'Content-Type': 'application/json'}
+            });
+        } catch(err){
+            console.log("ERRO: tente novamente!")
+        }
+    }
+
     return (
     <div>
         <Head>
@@ -16,17 +42,17 @@ function Home () {
         <br /><br /><br /><br /><br />
 
 
-        <form>
-            <input type="text" name='name' placeholder='digite o nome' /><br /><br />
-            <input type="email" name='email' placeholder='digite o seu melhor email' /><br /><br />
-            <input type="text" name='subject' placeholder='digite o assunto da mensagem' /><br /><br />
-            <input type="text" name='content' placeholder='conteúdo da mensagem' /><br /><br />
+        <form onSubmit={sendContato}>
+            <input type="text" name='name' placeholder='digite o nome' onChange={onChangeInput} value={dataForm.name} /><br /><br />
+            <input type="email" name='email' placeholder='digite o seu melhor email' onChange={onChangeInput} value={dataForm.email} /><br /><br />
+            <input type="text" name='subject' placeholder='digite o assunto da mensagem' onChange={onChangeInput} value={dataForm.subject} /><br /><br />
+            <input type="text" name='content' placeholder='conteúdo da mensagem' onChange={onChangeInput} value={dataForm.content} /><br /><br />
 
-
+            <button type='submit'> Enviar </button>
         </form>
     </div>
     )
 
 }
 
-export default Home;
+export default Contato;
