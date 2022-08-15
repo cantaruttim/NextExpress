@@ -18,11 +18,19 @@ function Contato () {
         console.log(dataForm.name);
         
         try{
-            await fetch('http://localhost:8080/add-msg-contact', {
+            const res = await fetch('http://localhost:8080/add-msg-contact', {
                 method: 'POST',
                 body: JSON.stringify(dataForm),
                 headers: { 'Content-Type': 'application/json'}
             });
+
+            const responseEnv = await res.json();
+
+            if(responseEnv.erro){
+                console.log(responseEnv.mensagem);
+            }else{
+                console.log(responseEnv.mensagem);
+            }
         } catch(err){
             console.log("ERRO: tente novamente!")
         }
