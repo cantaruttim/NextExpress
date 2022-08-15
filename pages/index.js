@@ -22,17 +22,17 @@ function Home ( { data } ) {
                 <div className='top-content'>
                     <div className='text-1'>
 
-                        {data.datahome.text_1}
+                        {data.datahome.text_one}
 
                     </div>
                     <div className='text-2'>
 
-                        {data.datahome.text_2}
+                        {data.datahome.text_two}
 
                     </div>
                     <div className='text-3'>
 
-                        {data.datahome.text_3}
+                        {data.datahome.text_three}
 
 
                     </div>
