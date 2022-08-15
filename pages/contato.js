@@ -13,8 +13,17 @@ function Home () {
             <title>Contato</title>
         </Head>
         <Menu />
-        Welcome to Contato page
+        <br /><br /><br /><br /><br />
 
+
+        <form>
+            <input type="text" name='name' placeholder='digite o nome' /><br /><br />
+            <input type="email" name='email' placeholder='digite o seu melhor email' /><br /><br />
+            <input type="text" name='subject' placeholder='digite o assunto da mensagem' /><br /><br />
+            <input type="text" name='content' placeholder='conteúdo da mensagem' /><br /><br />
+
+
+        </form>
     </div>
     )
 
